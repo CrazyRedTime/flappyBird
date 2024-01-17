@@ -51,8 +51,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'assets/**/*'),
-          to: path.resolve(__dirname, 'build')
+          from: path.resolve(__dirname, 'assets'),
+          to: path.resolve(__dirname, 'build/assets')
         }
       ],
     }),
@@ -60,4 +60,5 @@ module.exports = {
       process: 'process/browser' 
     })
   ],
+  resolve: { fallback: { 'process/browser': require.resolve('process/browser'), } }
 };
